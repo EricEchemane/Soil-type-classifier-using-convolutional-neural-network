@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Eric Echemane">
+    <meta name="description" content="Soil Type Classifier Using Convolutional Neural Network">
+    <title> Soil Type Identifier </title>
+    <link rel="author" href="https://github.com/ericechemane">
+</head>
+
+<body>
+    <input type="file" id="soil_image" />
+    <button onclick="classify()"> send </button>
+
+    <script>
+        const input = document.getElementById('soil_image');
+
+        function classify() {
+            const file = input.files[0];
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onloadend = async () => {
+                const res = await fetch('/', {
+                    method: 'POST',
+                    body: JSON.stringify({ base64Image: reader.result }),
+                    headers: { 'Content-Type': 'application/json' },
+                });
+                const data = await res.json();
+                console.log(data);
+            };
+        }
+    </script>
+</body>
+
+</html>
