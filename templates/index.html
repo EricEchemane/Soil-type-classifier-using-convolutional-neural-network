@@ -9,28 +9,77 @@
     <meta name="description" content="Soil Type Classifier Using Convolutional Neural Network">
     <title> Soil Type Identifier </title>
     <link rel="author" href="https://github.com/ericechemane">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+        * {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        img {
+            width: 300px;
+        }
+    </style>
 </head>
 
 <body>
-    <input type="file" id="soil_image" />
-    <button onclick="classify()"> send </button>
+
+    <main>
+        <input type="file" id="soil_image" accept="image/jpg" onchange="handleChange(event)" />
+        <button onclick="classify()"> send </button>
+        <br><br>
+        <img src="" alt="soil_image" id="soil_img">
+    </main>
 
     <script>
-        const input = document.getElementById('soil_image');
+        const acceptedFileType = 'image/jpeg';
+        const reader = new FileReader();
+        const displayImage = document.getElementById('soil_img');
+        let base64Image = null;
+        let imageHasBeenChanged = false;
 
-        function classify() {
-            const file = input.files[0];
-            const reader = new FileReader();
+        function showError() {
+            alert('Invalid file type');
+        }
+
+        function handleChange(e) {
+            // return if no file selected
+            if (e.target.files.length === 0) return;
+
+            const file = e.target.files[0];
+            if (file.type !== acceptedFileType) {
+                showError();
+                return;
+            }
+
             reader.readAsDataURL(file);
-            reader.onloadend = async () => {
-                const res = await fetch('/', {
-                    method: 'POST',
-                    body: JSON.stringify({ base64Image: reader.result }),
-                    headers: { 'Content-Type': 'application/json' },
-                });
-                const data = await res.json();
-                console.log(data);
+            reader.onloadend = () => {
+                base64Image = reader.result;
+                displayImage.src = base64Image;
+                imageHasBeenChanged = true;
             };
+        }
+
+        async function classify() {
+            // imageHasBeenChanged will prevent fetching the same image twice
+            if (base64Image === null || imageHasBeenChanged === false) return;
+
+            console.log('fetching...');
+
+            const res = await fetch('/', {
+                method: 'POST',
+                body: JSON.stringify({ base64Image }),
+                headers: { 'Content-Type': 'application/json' },
+            });
+            const data = await res.json();
+            console.log(data);
+
+            imageHasBeenChanged = false;
+
+            console.log('Completed');
         }
     </script>
 </body>
