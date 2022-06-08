@@ -12,6 +12,7 @@ def index():
         return render_template('index.html')
     response = make_response()
     response.headers.add("Access-Control-Allow-Origin", "*")
+    
     base64String = str.encode(request.json['base64Image'][23:])
 
     with open("uploads/img.jpg", "wb") as fh:

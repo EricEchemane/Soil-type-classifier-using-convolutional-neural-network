@@ -19,8 +19,30 @@
             box-sizing: border-box;
         }
 
-        img {
-            width: 300px;
+        main {
+            width: min(400px, 90vw);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding: 1rem;
+        }
+
+        #soil_img {
+            display: none;
+            margin: 1rem 0;
+            width: 100%;
+        }
+
+        #img_placeholder {
+            text-align: center;
+            padding: 6rem 0;
+            background-color: hsla(0, 0%, 0%, .1);
+            cursor: pointer;
+        }
+
+        button {
+            padding: 1rem;
         }
     </style>
 </head>
@@ -28,18 +50,29 @@
 <body>
 
     <main>
-        <input type="file" id="soil_image" accept="image/jpg" onchange="handleChange(event)" />
-        <button onclick="classify()"> send </button>
-        <br><br>
-        <img src="" alt="soil_image" id="soil_img">
+        <input type="file" id="fileInput" accept="image/jpg" onchange="handleChange(event)" hidden />
+
+        <img src="" alt="soil_image" id="soil_img" hidden>
+
+        <div id="img_placeholder" title="select image">
+            Tap to choose an image
+        </div>
+
+        <button onclick="classify()"> Classify </button>
+
+        <section id="result"></section>
     </main>
 
     <script>
         const acceptedFileType = 'image/jpeg';
         const reader = new FileReader();
         const displayImage = document.getElementById('soil_img');
+        const fileInput = document.getElementById('fileInput');
+        const imgPlaceholder = document.getElementById('img_placeholder');
         let base64Image = null;
         let imageHasBeenChanged = false;
+
+        imgPlaceholder.onclick = () => fileInput.click();
 
         function showError() {
             alert('Invalid file type');
@@ -59,15 +92,26 @@
             reader.onloadend = () => {
                 base64Image = reader.result;
                 displayImage.src = base64Image;
+                displayImage.style.display = 'block';
+                imgPlaceholder.innerText = 'Select another image';
+                imgPlaceholder.style.padding = '1rem 0';
                 imageHasBeenChanged = true;
             };
         }
 
         async function classify() {
-            // imageHasBeenChanged will prevent fetching the same image twice
-            if (base64Image === null || imageHasBeenChanged === false) return;
+            if (base64Image === null && imageHasBeenChanged === false) {
+                alert('Please select an image first.');
+                return;
+            }
+            // prevent fetching the same image twice
+            if (base64Image !== null && imageHasBeenChanged === false) {
+                alert('The selected image is already classified. Please select different one.');
+                return;
+            }
 
-            console.log('fetching...');
+            const resultContainer = document.getElementById('result');
+            resultContainer.innerHTML = 'Processing...';
 
             const res = await fetch('/', {
                 method: 'POST',
@@ -75,11 +119,20 @@
                 headers: { 'Content-Type': 'application/json' },
             });
             const data = await res.json();
-            console.log(data);
+
+            data.otherClasses = data.otherClasses.sort((a, b) => b.value - a.value);
 
             imageHasBeenChanged = false;
 
-            console.log('Completed');
+            resultContainer.innerHTML = '';
+            resultContainer.innerHTML = `
+                <h5> ${data.Result} </h4> <br/>
+            `;
+            for (const _class of data.otherClasses) {
+                const p = document.createElement('p');
+                p.innerText = _class.name + ": " + _class.value;
+                resultContainer.appendChild(p);
+            }
         }
     </script>
 </body>

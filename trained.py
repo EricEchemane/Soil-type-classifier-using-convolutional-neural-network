@@ -3,8 +3,9 @@ import numpy as np
 from tensorflow import keras
 
 image = tf.keras.preprocessing.image
+model = keras.models.load_model('soil_classifier.h5')
 
-CLASSES = ['clay', 'gravel', 'humus', 'peat', 'sand']
+class_ = ['clay', 'gravel', 'humus', 'sand', 'silt']
 
 def classify(image_fp):
     img = image.load_img(image_fp, target_size = (256, 256))
@@ -13,16 +14,16 @@ def classify(image_fp):
     image_array = img / 255. # scale the image
     img_batch = np.expand_dims(image_array, axis = 0)
 
-    class_ = CLASSES # possible output values
-    model = keras.models.load_model('soil_classifier.h5')
     predicted_value = model.predict(img_batch)
 
     out  = {
-      "clay": f"{predicted_value[0][0]:.5f}",
-      "gravel": f"{predicted_value[0][1]:.5f}",
-      "humus": f"{predicted_value[0][2]:.5f}",
-      "peat": f"{predicted_value[0][3]:.5f}",
-      "sand": f"{predicted_value[0][4]:.5f}",
+      "otherClasses":[
+        { "name": "clay", "value": f"{predicted_value[0][0]}" },
+        { "name": "gravel" ,"value": f"{predicted_value[0][1]}" },
+        { "name": "humus" , "value": f"{predicted_value[0][2]}" },
+        { "name": "sandy" , "value": f"{predicted_value[0][3]}" },
+        { "name": "sandy" , "value": f"{predicted_value[0][4]}" },
+      ],
       "Result": f"{(predicted_value[0][predicted_value.argmax()] * 100):.2f}% {class_[predicted_value.argmax()]}"
     }
     return out
