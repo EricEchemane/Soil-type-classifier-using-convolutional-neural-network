@@ -1,0 +1,24 @@
+{
+    "name": "leafjem",
+    "version": "0.0.1",
+    "description": "frontend app for soil classification",
+    "main": "index.js",
+    "scripts": {
+        "dev": "cd leafjem && npm run dev",
+        "start": "cd leafjem && npm start"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/EricEchemane/Soil-Type-Classifier-Through-Image-Processing.git"
+    },
+    "keywords": [
+        "soil",
+        "cnn"
+    ],
+    "author": "Eric Echemane",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/EricEchemane/Soil-Type-Classifier-Through-Image-Processing/issues"
+    },
+    "homepage": "https://github.com/EricEchemane/Soil-Type-Classifier-Through-Image-Processing#readme"
+}

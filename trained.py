@@ -18,12 +18,15 @@ def classify(image_fp):
 
     out  = {
       "otherClasses":[
-        { "name": "clay", "value": f"{predicted_value[0][0]}" },
+        { "name": "clayey", "value": f"{predicted_value[0][0]}" },
         { "name": "gravel" ,"value": f"{predicted_value[0][1]}" },
         { "name": "humus" , "value": f"{predicted_value[0][2]}" },
         { "name": "sandy" , "value": f"{predicted_value[0][3]}" },
-        { "name": "sandy" , "value": f"{predicted_value[0][4]}" },
+        { "name": "silty" , "value": f"{predicted_value[0][4]}" },
       ],
-      "Result": f"{(predicted_value[0][predicted_value.argmax()] * 100):.2f}% {class_[predicted_value.argmax()]}"
+      "Result": f"{(predicted_value[0][predicted_value.argmax()] * 100):.2f}% {class_[predicted_value.argmax()]}",
+      "accuracy_score": f"{predicted_value[0][predicted_value.argmax()]}",
+      "accuracy_score_rounded": f"{(predicted_value[0][predicted_value.argmax()] * 100):.2f}",
+      "soil_type": f"{class_[predicted_value.argmax()]}"
     }
     return out
