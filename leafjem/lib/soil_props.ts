@@ -1,6 +1,6 @@
 const soil_props = [
     {
-        name: "clayey",
+        name: "clay",
         colors: [
             "red",
             "orange",
