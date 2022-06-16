@@ -17,7 +17,7 @@ const soil_props = [
         suitable_plants: "majority of vegetables"
     },
     {
-        name: "sandy",
+        name: "sand",
         colors: [
             "light brown",
             "gray"
@@ -33,7 +33,7 @@ const soil_props = [
         suitable_plants: "bulbs and tubers"
     },
     {
-        name: "silty",
+        name: "silt",
         colors: [
             "dark brown",
             "grayish brown"
