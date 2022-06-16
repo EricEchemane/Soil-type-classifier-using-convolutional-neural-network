@@ -1,5 +1,6 @@
 import { Group, Table, Text } from '@mantine/core';
 import useSoilContext, { SoilContextType } from 'contexts/SoilContext';
+import soil_props from 'lib/soil_props';
 import React from 'react';
 
 export default function Result() {
@@ -21,10 +22,12 @@ export default function Result() {
         </tr>
     ));
 
+    const props = soil_props.find((prop) => prop.name === result.soil_type);
+
     return (
         <>
             <Text weight={700} mb={10}> Model Results: </Text>
-            <Table>
+            <Table striped>
                 <thead>
                     <tr>
                         <th>Label</th>
@@ -33,6 +36,20 @@ export default function Result() {
                 </thead>
                 <tbody>
                     {rows}
+                    {
+                        Object.entries(props || []).map((prop, index) => {
+                            if (typeof prop[1] !== 'string') {
+                                return <tr key={index}>
+                                    <td>{prop[0]}</td>
+                                    <td>{prop[1]?.join(', ')}</td>
+                                </tr>;
+                            }
+                            return <tr key={index}>
+                                <td>{prop[0]}</td>
+                                <td>{prop[1]}</td>
+                            </tr>;
+                        })
+                    }
                     <tr>
                         <td> Other classes </td>
                         <td>

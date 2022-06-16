@@ -70,7 +70,7 @@ export default function ImageDragDrop() {
             >
                 {(status) => DropzoneChildren(status, theme)}
             </Dropzone>
-            {file && <Text style={{ fontStyle: 'italic' }}> Tip: tap the image to select another or drag and drop on the area </Text>}
+            {file && <Text style={{ fontStyle: 'italic' }}> Tip: Tap the image to select another or drag and drop on the area </Text>}
         </>
     );
 }

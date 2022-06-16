@@ -10,22 +10,24 @@ export default function FileInfo() {
         <>
             <Text weight={700} mb={10}> File Info: </Text>
             <Table>
-                <tr>
-                    <td>Path</td>
-                    <td> {file.path} </td>
-                </tr>
-                <tr>
-                    <td>Last Modified</td>
-                    <td> {file.lastModified} </td>
-                </tr>
-                <tr>
-                    <td>File size</td>
-                    <td> {file.size} </td>
-                </tr>
-                <tr>
-                    <td>Type</td>
-                    <td> {file.type} </td>
-                </tr>
+                <tbody>
+                    <tr>
+                        <td>Path</td>
+                        <td> {file.path} </td>
+                    </tr>
+                    <tr>
+                        <td>Last Modified</td>
+                        <td> {file.lastModified} </td>
+                    </tr>
+                    <tr>
+                        <td>File size</td>
+                        <td> {file.size} </td>
+                    </tr>
+                    <tr>
+                        <td>Type</td>
+                        <td> {file.type} </td>
+                    </tr>
+                </tbody>
             </Table>
         </>
     );
