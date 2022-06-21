@@ -1,0 +1,5 @@
+clay
+gravel
+humus
+sand
+silt
