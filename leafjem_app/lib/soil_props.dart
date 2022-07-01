@@ -1,7 +1,7 @@
 const soilProps = [
   {
     "name": "clay",
-    "colors": ["red", "orange", "brown"],
+    "colors": "red, orange, brown",
     "grain_size": "small and fine",
     "acidity": "alkaline",
     "texture": "sticky and lumpy when wet. hard with cracks when dry",
@@ -15,7 +15,7 @@ const soilProps = [
   },
   {
     "name": "sand",
-    "colors": ["light brown", "gray"],
+    "colors": "light brown, gray",
     "grain_size": "big and course",
     "acidity": "acidic",
     "texture": "gritty and rough",
@@ -30,7 +30,7 @@ const soilProps = [
   },
   {
     "name": "silt",
-    "colors": ["dark brown", "grayish brown"],
+    "colors": "dark brown, grayish brown",
     "grain_size": "bigger than clay, smaller than sand",
     "acidity": "slightly acidic to slightly alkaline",
     "texture": "very fine and soft",
@@ -43,7 +43,7 @@ const soilProps = [
   },
   {
     "name": "humus",
-    "colors": ["dark brown", "black"],
+    "colors": "dark brown, black",
     "grain_size": null,
     "acidity": "acidic",
     "texture": "soft and easy to compress",
@@ -57,7 +57,7 @@ const soilProps = [
   },
   {
     "name": "gravel",
-    "colors": ["dark brown", "black"],
+    "colors": "dark brown, black",
     "grain_size": "big chunks",
     "acidity": "neutral to alkaline",
     "texture": "rough",

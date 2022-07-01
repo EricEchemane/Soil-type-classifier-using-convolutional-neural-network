@@ -4,6 +4,7 @@ import 'dart:io';
 // import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:leafjem_app/output_table.dart';
 import 'package:tflite/tflite.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -95,11 +96,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       height: deviceWidth,
                       child: const Center(child: Text('No image is selected')),
                     ),
-              _output != null
-                  ? Column(
-                      children: [Text('Soil Type: ${_output["label"]}')],
-                    )
-                  : Container(),
+              _output != null ? OutputTable(output: _output) : Container(),
               const SizedBox(
                 height: 20,
               ),
