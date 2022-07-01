@@ -15,6 +15,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  ScrollController scrollController = ScrollController();
   final ImagePicker _picker = ImagePicker();
   XFile? _selectedImage;
   dynamic _output;
@@ -60,6 +61,12 @@ class _HomeScreenState extends State<HomeScreen> {
       _selectedImage = photo;
     });
     classifyImage();
+    scrollController.animateTo(
+        //go to top of scroll
+        0, //scroll offset to go
+        duration: const Duration(milliseconds: 500), //duration of scroll
+        curve: Curves.fastOutSlowIn //scroll type
+        );
   }
 
   selectImageFromGallery() async {
@@ -68,6 +75,12 @@ class _HomeScreenState extends State<HomeScreen> {
       _selectedImage = image;
     });
     classifyImage();
+    scrollController.animateTo(
+        //go to top of scroll
+        0, //scroll offset to go
+        duration: const Duration(milliseconds: 500), //duration of scroll
+        curve: Curves.fastOutSlowIn //scroll type
+        );
   }
 
   clearImage() {
@@ -84,6 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
         appBar: AppBar(title: const Text('LeafJem')),
         body: SingleChildScrollView(
+          controller: scrollController,
           child: Column(
             children: [
               _selectedImage != null

@@ -44,7 +44,7 @@ const soilProps = [
   {
     "name": "humus",
     "colors": "dark brown, black",
-    "grain_size": null,
+    "grain_size": "small to soft large size",
     "acidity": "acidic",
     "texture": "soft and easy to compress",
     "how_to_test":
