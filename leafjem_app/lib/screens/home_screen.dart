@@ -16,20 +16,13 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final ImagePicker _picker = ImagePicker();
   XFile? _selectedImage;
-
-  // bool _loading = false;
-
   dynamic _output;
 
   @override
   void initState() {
     super.initState();
 
-    loadModel().then((value) {
-      setState(() {
-        // _loading = false;
-      });
-    });
+    loadModel().then((value) {});
   }
 
   classifyImage() async {
@@ -41,7 +34,6 @@ class _HomeScreenState extends State<HomeScreen> {
         threshold: 0.2, // defaults to 0.1
         asynch: true // defaults to true
         );
-    print(output);
     setState(() {
       // _loading = false;
       _output = output?[0];
@@ -86,43 +78,60 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    double deviceWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
-      appBar: AppBar(title: const Text('LeafJem')),
-      body: Center(
-        child: Column(
-          children: [
-            _selectedImage != null
-                ? Image(
-                    image: ResizeImage(FileImage(File(_selectedImage!.path)),
-                        width: 255, height: 255, allowUpscaling: true),
-                    fit: BoxFit.fitWidth,
-                    alignment: FractionalOffset.center,
-                  )
-                // ? Image.file(File(_selectedImage!.path))
-                : const Center(
-                    child: Text('No image is selected'),
-                    heightFactor: 30,
+        appBar: AppBar(title: const Text('LeafJem')),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              _selectedImage != null
+                  ? SizedBox(
+                      height: deviceWidth,
+                      child:
+                          Image(image: FileImage(File(_selectedImage!.path))),
+                    )
+                  : SizedBox(
+                      height: deviceWidth,
+                      child: const Center(child: Text('No image is selected')),
+                    ),
+              _output != null
+                  ? Column(
+                      children: [Text('Soil Type: ${_output["label"]}')],
+                    )
+                  : Container(),
+              const SizedBox(
+                height: 20,
+              ),
+              Row(
+                children: [
+                  Container(
+                    width: deviceWidth / 2,
+                    height: 70,
+                    padding: const EdgeInsets.all(10),
+                    child: ElevatedButton(
+                        onPressed: selectImageFromCamera,
+                        child: const Text('Capture from camera')),
                   ),
-            ElevatedButton(
-                onPressed: selectImageFromCamera,
-                child: const Text('Launch Camera')),
-            ElevatedButton(
-                onPressed: selectImageFromGallery,
-                child: const Text('Select from gallery')),
-            ElevatedButton(
-                onPressed: clearImage, child: const Text('Clear image')),
-            _output != null
-                ? Column(
-                    children: [
-                      Text('Type: ' + _output['label']),
-                      Text('Confidence: ' +
-                          _output['confidence'].toStringAsFixed(3)),
-                    ],
+                  Container(
+                    width: deviceWidth / 2,
+                    height: 70,
+                    padding: const EdgeInsets.all(10),
+                    child: ElevatedButton(
+                        onPressed: selectImageFromGallery,
+                        child: const Text('Select from files')),
                   )
-                : const Text('No results yet')
-          ],
-        ),
-      ),
-    );
+                ],
+              ),
+              Container(
+                width: deviceWidth,
+                height: 70,
+                padding: const EdgeInsets.all(10),
+                child: OutlinedButton(
+                    onPressed: clearImage, child: const Text('Reset')),
+              ),
+            ],
+          ),
+        ));
   }
 }
