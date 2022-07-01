@@ -61,12 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
       _selectedImage = photo;
     });
     classifyImage();
-    scrollController.animateTo(
-        //go to top of scroll
-        0, //scroll offset to go
-        duration: const Duration(milliseconds: 500), //duration of scroll
-        curve: Curves.fastOutSlowIn //scroll type
-        );
+    scrollToTop();
   }
 
   selectImageFromGallery() async {
@@ -75,6 +70,10 @@ class _HomeScreenState extends State<HomeScreen> {
       _selectedImage = image;
     });
     classifyImage();
+    scrollToTop();
+  }
+
+  scrollToTop() {
     scrollController.animateTo(
         //go to top of scroll
         0, //scroll offset to go
