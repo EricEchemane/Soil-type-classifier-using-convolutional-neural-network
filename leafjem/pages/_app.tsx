@@ -5,7 +5,9 @@ import { SoilContextProvider } from 'contexts/SoilContext';
 function MyApp({ Component, pageProps }: AppProps) {
   return <>
     <SoilContextProvider>
-      <Component {...pageProps} />
+      <div style={{ backgroundColor: '#f7e7da', minHeight: '100vh' }}>
+        <Component {...pageProps} />
+      </div>
     </SoilContextProvider>
   </>;
 }

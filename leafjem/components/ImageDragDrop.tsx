@@ -43,7 +43,7 @@ export const DropzoneChildren = (status: DropzoneStatus, theme: MantineTheme) =>
                     Drag image here or click to select file
                 </Text>
                 <Text size="sm" color="dimmed" inline mt={7} align='center'>
-                    Attach a clean and clear photo of your soil about 12 inches from the ground
+                    Eliminate the unnecessary objects on the soil before capturing it
                 </Text>
             </div>
         </Group>

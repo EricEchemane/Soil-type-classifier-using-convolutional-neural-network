@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:leafjem_app/pallete.dart';
 import 'package:leafjem_app/screens/home_screen.dart';
 
 void main() {
@@ -13,9 +14,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Pixsoil',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Pallete.mcgpalette0,
       ),
       home: const HomeScreen(),
     );

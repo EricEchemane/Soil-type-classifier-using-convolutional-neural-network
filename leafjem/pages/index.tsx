@@ -1,4 +1,4 @@
-import { Container, Grid } from '@mantine/core';
+import { Box, Container, Grid } from '@mantine/core';
 import Result from 'components/Result';
 import ImageDragDrop from 'components/ImageDragDrop';
 import TitleHeader from 'components/TitleHeader';
@@ -21,29 +21,32 @@ export default function Home() {
 
   return (
     <>
-      <Head> <title> LeafJem - Soil Classification App </title> </Head>
+      <Head> <title> Pixsoil - Soil Classification App </title> </Head>
 
-      <Container>
+      <Box>
 
         <TitleHeader />
 
-        <Grid align='stretch'>
+        <Container>
 
-          <Grid.Col span={smallDevice ? 12 : 6}>
-            <ImageDragDrop />
-          </Grid.Col>
+          <Grid align='stretch'>
 
-          <Grid.Col span={smallDevice ? 12 : 6}>
-            <FileInfo />
-          </Grid.Col>
+            <Grid.Col span={smallDevice ? 12 : 6}>
+              <ImageDragDrop />
+            </Grid.Col>
 
-          <Grid.Col span={12}>
-            <Result />
-          </Grid.Col>
+            <Grid.Col span={smallDevice ? 12 : 6}>
+              <FileInfo />
+            </Grid.Col>
 
-        </Grid>
+            <Grid.Col span={12}>
+              <Result />
+            </Grid.Col>
+          </Grid>
 
-      </Container>
+        </Container>
+
+      </Box>
     </>
   );
 }

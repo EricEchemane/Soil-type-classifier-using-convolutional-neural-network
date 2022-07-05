@@ -16,12 +16,8 @@ export default function FileInfo() {
                         <td> {file.path} </td>
                     </tr>
                     <tr>
-                        <td>Last Modified</td>
-                        <td> {file.lastModified} </td>
-                    </tr>
-                    <tr>
                         <td>File size</td>
-                        <td> {file.size} </td>
+                        <td> {file.size} bytes </td>
                     </tr>
                     <tr>
                         <td>Type</td>

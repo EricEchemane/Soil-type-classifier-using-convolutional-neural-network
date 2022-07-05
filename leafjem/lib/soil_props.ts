@@ -1,15 +1,15 @@
 const soil_props = [
     {
         name: "clay",
-        colors: [
-            "red",
-            "orange",
-            "brown"
-        ],
+        // colors: [
+        //     "red",
+        //     "orange",
+        //     "brown"
+        // ],
         grain_size: "small and fine",
         acidity: "alkaline",
         texture: "sticky and lumpy when wet. hard with cracks when dry",
-        how_to_test: "can form a ball when you squeeze a handful",
+        // how_to_test: "can form a ball when you squeeze a handful",
         water_and_nutrient_holding_capacity: "high",
         porosity: "low",
         other_properties: "can hold water and nutrients longer than silty and sandy soil. Drains slower",
@@ -18,14 +18,14 @@ const soil_props = [
     },
     {
         name: "sand",
-        colors: [
-            "light brown",
-            "gray"
-        ],
+        // colors: [
+        //     "light brown",
+        //     "gray"
+        // ],
         grain_size: "big and course",
         acidity: "acidic",
         texture: "gritty and rough",
-        how_to_test: "grab a handful and open your hand, particles fall off through your fingers",
+        // how_to_test: "grab a handful and open your hand, particles fall off through your fingers",
         water_and_nutrient_holding_capacity: "low",
         porosity: "high",
         other_properties: "easy to cultivate. Drains quickly. Water and nutrients are washed away during wet season. Often called the hungry soil",
@@ -34,14 +34,14 @@ const soil_props = [
     },
     {
         name: "silt",
-        colors: [
-            "dark brown",
-            "grayish brown"
-        ],
+        // colors: [
+        //     "dark brown",
+        //     "grayish brown"
+        // ],
         grain_size: "bigger than clay, smaller than sand",
         acidity: "slightly acidic to slightly alkaline",
         texture: "very fine and soft",
-        how_to_test: "smooth and soapy to the touch",
+        // how_to_test: "smooth and soapy to the touch",
         water_and_nutrient_holding_capacity: "lower than clay, higher than sand",
         porosity: "good",
         other_properties: "easy to compact",
@@ -50,14 +50,14 @@ const soil_props = [
     },
     {
         name: "humus",
-        colors: [
-            "dark brown",
-            "black"
-        ],
-        grain_size: null,
+        // colors: [
+        //     "dark brown",
+        //     "black"
+        // ],
+        grain_size: "small to medium soft chunks",
         acidity: "acidic",
         texture: "soft and easy to compress",
-        how_to_test: "when wet peat soil is rolled, you won'nt form a ball. It's spongy to the touch and when squeezed, water drains through your fingers",
+        // how_to_test: "when wet peat soil is rolled, you won'nt form a ball. It's spongy to the touch and when squeezed, water drains through your fingers",
         water_and_nutrient_holding_capacity: "high",
         porosity: "low",
         other_properties: "high in water content, high in organic matter",
@@ -66,14 +66,14 @@ const soil_props = [
     },
     {
         name: "gravel",
-        colors: [
-            "dark brown",
-            "black"
-        ],
+        // colors: [
+        //     "dark brown",
+        //     "black"
+        // ],
         grain_size: "big chunks",
         acidity: "neutral to alkaline",
         texture: "rough",
-        how_to_test: "has evident white chalks in the soil",
+        // how_to_test: "has evident white chalks in the soil",
         water_and_nutrient_holding_capacity: "low",
         porosity: "high",
         other_properties: "dries out rapidly in hot weather",

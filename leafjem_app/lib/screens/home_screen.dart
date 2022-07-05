@@ -55,24 +55,6 @@ class _HomeScreenState extends State<HomeScreen> {
     super.dispose();
   }
 
-  selectImageFromCamera() async {
-    final XFile? photo = await _picker.pickImage(source: ImageSource.camera);
-    setState(() {
-      _selectedImage = photo;
-    });
-    classifyImage();
-    scrollToTop();
-  }
-
-  selectImageFromGallery() async {
-    final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
-    setState(() {
-      _selectedImage = image;
-    });
-    classifyImage();
-    scrollToTop();
-  }
-
   scrollToTop() {
     scrollController.animateTo(
         //go to top of scroll
@@ -94,7 +76,12 @@ class _HomeScreenState extends State<HomeScreen> {
     double deviceWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-        appBar: AppBar(title: const Text('LeafJem')),
+        appBar: AppBar(
+            centerTitle: true,
+            title: const Text(
+              'Pixsoil',
+              style: TextStyle(fontFamily: 'Oleo', fontSize: 25),
+            )),
         body: SingleChildScrollView(
           controller: scrollController,
           child: Column(
@@ -120,15 +107,33 @@ class _HomeScreenState extends State<HomeScreen> {
                     height: 70,
                     padding: const EdgeInsets.all(10),
                     child: ElevatedButton(
-                        onPressed: selectImageFromCamera,
-                        child: const Text('Capture from camera')),
+                        onPressed: () async {
+                          final XFile? photo = await _picker.pickImage(
+                              source: ImageSource.camera);
+                          if (photo == null) return;
+                          setState(() {
+                            _selectedImage = photo;
+                          });
+                          classifyImage();
+                          scrollToTop();
+                        },
+                        child: const Text('Take a picture')),
                   ),
                   Container(
                     width: deviceWidth / 2,
                     height: 70,
                     padding: const EdgeInsets.all(10),
                     child: ElevatedButton(
-                        onPressed: selectImageFromGallery,
+                        onPressed: () async {
+                          final XFile? photo = await _picker.pickImage(
+                              source: ImageSource.gallery);
+                          if (photo == null) return;
+                          setState(() {
+                            _selectedImage = photo;
+                          });
+                          classifyImage();
+                          scrollToTop();
+                        },
                         child: const Text('Select from files')),
                   )
                 ],
