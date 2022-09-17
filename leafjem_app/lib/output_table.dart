@@ -79,10 +79,6 @@ class _OutputTableState extends State<OutputTable> {
                 TableData(
                     text: '${widget.output["confidence"].roundToDouble()}')
               ]),
-              // TableRow(children: [
-              //   const TableData(text: 'Colors'),
-              //   TableData(text: '${props["colors"]}')
-              // ]),
               TableRow(children: [
                 const TableData(text: 'Grain Size'),
                 TableData(text: '${props["grain_size"]}')
@@ -125,7 +121,8 @@ class _OutputTableState extends State<OutputTable> {
             child: OutlinedButton.icon(
                 onPressed: () {},
                 icon: const Icon(Icons.open_in_new_outlined),
-                label: const Text('See list of suitable plants')),
+                label: Text(
+                    'See list of suitable plants for ${widget.output["label"]}')),
           ),
         ],
       ),
