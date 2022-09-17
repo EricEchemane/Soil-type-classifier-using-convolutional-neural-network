@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:leafjem_app/components/table_data.dart';
 import 'package:leafjem_app/screens/suitable_plants.dart';
-import 'package:leafjem_app/soil_props.dart';
-import 'package:leafjem_app/table_data.dart';
+import 'package:leafjem_app/constants/soil_props.dart';
 
 class OutputTable extends StatefulWidget {
   final dynamic output;

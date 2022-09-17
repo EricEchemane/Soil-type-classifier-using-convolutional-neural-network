@@ -4,7 +4,7 @@ import 'dart:io';
 // import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:leafjem_app/output_table.dart';
+import 'package:leafjem_app/components/output_table.dart';
 import 'package:tflite/tflite.dart';
 
 class HomeScreen extends StatefulWidget {
