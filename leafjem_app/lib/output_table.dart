@@ -17,6 +17,8 @@ class _OutputTableState extends State<OutputTable> {
     dynamic props = soilProps
         .firstWhere((element) => element["name"] == widget.output["label"]);
 
+    double deviceWidth = MediaQuery.of(context).size.width;
+
     return Padding(
       padding: const EdgeInsets.all(10),
       child: Column(
@@ -114,11 +116,16 @@ class _OutputTableState extends State<OutputTable> {
                 const TableData(text: 'how To Improve'),
                 TableData(text: '${props["how_to_improve"]}')
               ]),
-              TableRow(children: [
-                const TableData(text: 'Suitable Plants'),
-                TableData(text: '${props["suitable_plants"]}')
-              ]),
             ],
+          ),
+          Container(
+            width: deviceWidth,
+            height: 70,
+            padding: const EdgeInsets.all(10),
+            child: OutlinedButton.icon(
+                onPressed: () {},
+                icon: const Icon(Icons.open_in_new_outlined),
+                label: const Text('See list of suitable plants')),
           ),
         ],
       ),
