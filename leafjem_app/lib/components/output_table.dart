@@ -124,7 +124,9 @@ class _OutputTableState extends State<OutputTable> {
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) => SuitablePlantsScreen(
-                          soilType: widget.output["label"]),
+                        soilType: widget.output["label"],
+                        overview: props["suitable_plants"],
+                      ),
                     ),
                   );
                 },
