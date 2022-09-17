@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
+import 'package:leafjem_app/components/plant.dart';
 
 class SuitablePlantsScreen extends StatefulWidget {
   final String soilType;
   final String overview;
+  final List<Map<String, String>>? suitablePlants;
 
   const SuitablePlantsScreen(
-      {Key? key, required this.soilType, required this.overview})
+      {Key? key,
+      required this.soilType,
+      required this.overview,
+      required this.suitablePlants})
       : super(key: key);
 
   @override
@@ -15,7 +20,6 @@ class SuitablePlantsScreen extends StatefulWidget {
 
 class _SuitablePlantsScreenState extends State<SuitablePlantsScreen> {
   final ScrollController scrollController = ScrollController();
-
   bool networkConnected = false;
 
   @override
@@ -56,10 +60,25 @@ class _SuitablePlantsScreenState extends State<SuitablePlantsScreen> {
                 child: Center(
                     child: Text(
                   '${widget.overview} are suitable for ${widget.soilType}',
-                  style: const TextStyle(fontSize: 18),
+                  style: const TextStyle(
+                      fontSize: 18, fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center,
                 )),
-              )
+              ),
+              ListView.builder(
+                itemBuilder: (_, index) {
+                  String? name = widget.suitablePlants![index]["name"];
+                  String? image = widget.suitablePlants![index]["image"];
+                  String? description =
+                      widget.suitablePlants![index]["description"];
+                  return Plant(
+                      name: name!, description: description!, image: image!);
+                },
+                itemCount: widget.suitablePlants?.length,
+                scrollDirection: Axis.vertical,
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+              ),
             ])));
   }
 }

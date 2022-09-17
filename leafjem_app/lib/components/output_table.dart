@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:leafjem_app/components/table_data.dart';
 import 'package:leafjem_app/screens/suitable_plants.dart';
 import 'package:leafjem_app/constants/soil_props.dart';
+import 'package:leafjem_app/constants/plants.dart';
 
 class OutputTable extends StatefulWidget {
   final dynamic output;
@@ -126,6 +127,7 @@ class _OutputTableState extends State<OutputTable> {
                       builder: (context) => SuitablePlantsScreen(
                         soilType: widget.output["label"],
                         overview: props["suitable_plants"],
+                        suitablePlants: plants["clay"],
                       ),
                     ),
                   );
