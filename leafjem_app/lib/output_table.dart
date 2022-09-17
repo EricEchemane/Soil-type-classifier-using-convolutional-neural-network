@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:leafjem_app/screens/suitable_plants.dart';
 import 'package:leafjem_app/soil_props.dart';
 import 'package:leafjem_app/table_data.dart';
 
@@ -119,7 +120,14 @@ class _OutputTableState extends State<OutputTable> {
             height: 70,
             padding: const EdgeInsets.all(10),
             child: OutlinedButton.icon(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => SuitablePlantsScreen(
+                          soilType: widget.output["label"]),
+                    ),
+                  );
+                },
                 icon: const Icon(Icons.open_in_new_outlined),
                 label: Text(
                     'See list of suitable plants for ${widget.output["label"]}')),

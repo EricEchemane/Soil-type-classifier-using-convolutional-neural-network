@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 
-enum SoilTypes {
-  clay,
-  gravel,
-  humus,
-  sand,
-  silt,
-}
-
 class SuitablePlantsScreen extends StatelessWidget {
-  final SoilTypes soilType;
+  final String soilType;
 
   const SuitablePlantsScreen({Key? key, required this.soilType})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+        appBar: AppBar(
+            centerTitle: true,
+            title: Text(
+              'Suitable plants for $soilType',
+            )),
+        body: Center(
+          child: Text('Suitable plants for $soilType'),
+        ));
   }
 }
