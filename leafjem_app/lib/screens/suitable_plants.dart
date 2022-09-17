@@ -37,11 +37,29 @@ class _SuitablePlantsScreenState extends State<SuitablePlantsScreen> {
               'Suitable plants for ${widget.soilType}',
             )),
         body: SingleChildScrollView(
-          controller: scrollController,
-          child: Column(children: [
-            Text(widget.overview),
-            Text(networkConnected ? 'connected' : 'not connected'),
-          ]),
-        ));
+            controller: scrollController,
+            child: Column(children: [
+              Container(
+                padding: const EdgeInsets.all(20),
+                margin: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: const BorderRadius.all(Radius.circular(10)),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.2),
+                      spreadRadius: 4,
+                      blurRadius: 7,
+                    ),
+                  ],
+                ),
+                child: Center(
+                    child: Text(
+                  '${widget.overview} are suitable for ${widget.soilType}',
+                  style: const TextStyle(fontSize: 18),
+                  textAlign: TextAlign.center,
+                )),
+              )
+            ])));
   }
 }
