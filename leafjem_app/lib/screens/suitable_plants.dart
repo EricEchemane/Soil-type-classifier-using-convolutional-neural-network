@@ -39,7 +39,7 @@ class _SuitablePlantsScreenState extends State<SuitablePlantsScreen> {
             centerTitle: true,
             backgroundColor: Colors.green,
             title: Text(
-              'Suitable plants for ${widget.soilType}',
+              'Suitable crops for ${widget.soilType}',
             )),
         body: SingleChildScrollView(
             controller: scrollController,
