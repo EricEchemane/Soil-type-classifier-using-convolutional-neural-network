@@ -30,6 +30,7 @@ class Plant extends StatelessWidget {
           ],
         ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
                 child: ClipRRect(
@@ -40,7 +41,7 @@ class Plant extends StatelessWidget {
             const SizedBox(height: 20),
             Text(
               name,
-              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 20),
             Text(description)

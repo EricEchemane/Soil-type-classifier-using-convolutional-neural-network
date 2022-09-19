@@ -37,6 +37,7 @@ class _SuitablePlantsScreenState extends State<SuitablePlantsScreen> {
     return Scaffold(
         appBar: AppBar(
             centerTitle: true,
+            backgroundColor: Colors.green,
             title: Text(
               'Suitable plants for ${widget.soilType}',
             )),
