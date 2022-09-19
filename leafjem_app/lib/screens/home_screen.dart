@@ -129,8 +129,16 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       child: SizedBox(
                         height: deviceWidth,
-                        child:
-                            const Center(child: Text('No image is selected')),
+                        child: const Center(
+                            child: Text(
+                          'No image is selected.\nSelect using one of the buttons below.',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              height: 1.5,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.grey),
+                        )),
                       ),
                     ),
               _output != null ? OutputTable(output: _output) : Container(),
