@@ -11,7 +11,7 @@ const soilProps = [
     "other_properties":
         "can hold water and nutrients longer than silty and sandy soil. Drains slower",
     "how_to_improve": "add organic matters that are high porosity. cultivation",
-    "suitable_plants": "majority of vegetables"
+    "suitable_plants": "Majority of vegetables"
   },
   {
     "name": "sand",
@@ -26,7 +26,7 @@ const soilProps = [
     "other_properties":
         "easy to cultivate. Drains quickly. Water and nutrients are washed away during wet season. Often called the hungry soil",
     "how_to_improve": "add organic matters that can hold and retain water",
-    "suitable_plants": "bulbs and tubers"
+    "suitable_plants": "Bulbs and Tubers"
   },
   {
     "name": "silt",
@@ -39,7 +39,7 @@ const soilProps = [
     "porosity": "good",
     "other_properties": "easy to compact",
     "how_to_improve": "add organic matter, cultivation",
-    "suitable_plants": "majority of vegetables"
+    "suitable_plants": "Majority of vegetables"
   },
   {
     "name": "humus",
@@ -53,7 +53,7 @@ const soilProps = [
     "porosity": "low",
     "other_properties": "high in water content, high in organic matter",
     "how_to_improve": "add organic matter, cultivation, add limestone",
-    "suitable_plants": "majority of vegetables"
+    "suitable_plants": "Majority of vegetables"
   },
   {
     "name": "gravel",
@@ -67,6 +67,6 @@ const soilProps = [
     "other_properties": "dries out rapidly in hot weather",
     "how_to_improve":
         "amend the soil by adding organic matter, such as composted manure or peat, and tillig it into the top eight inches of soil",
-    "suitable_plants": "bulbs and tubers"
+    "suitable_plants": "Bulbs and Tubers"
   }
 ];
