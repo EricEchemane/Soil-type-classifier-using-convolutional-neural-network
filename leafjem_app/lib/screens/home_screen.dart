@@ -209,7 +209,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Container(
                       padding: const EdgeInsets.all(8),
                       child: const HyperLink(
-                          displayText: 'Pixsoil for web', path: '/web'),
+                          displayText: 'Pixsoil for web', path: '/'),
                     ),
                   ],
                 ),
