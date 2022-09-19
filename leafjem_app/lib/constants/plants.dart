@@ -1,5 +1,5 @@
 const plants = {
-  "majority of vegetables": [
+  "Majority of vegetables": [
     {
       "name": "Broccoli",
       "image":
@@ -70,7 +70,7 @@ const plants = {
           "Snap and snow peas do best with trellis even if they say they are no-trellis varieties. Pea pods can be harvested at any time: the whole thing is delicious.",
     },
   ],
-  "bulbs and tubers": [
+  "Bulbs and Tubers": [
     {
       "name": "Onion",
       "image":

@@ -60,9 +60,9 @@ class _SuitablePlantsScreenState extends State<SuitablePlantsScreen> {
                 ),
                 child: Center(
                     child: Text(
-                  '${widget.overview} are suitable for ${widget.soilType}',
+                  '${widget.overview} are suitable for ${widget.soilType}. Below are examples of them.',
                   style: const TextStyle(
-                      fontSize: 18, fontWeight: FontWeight.bold),
+                      fontSize: 18, fontWeight: FontWeight.w500, height: 1.5),
                   textAlign: TextAlign.center,
                 )),
               ),
