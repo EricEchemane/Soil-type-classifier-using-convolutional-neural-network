@@ -4,6 +4,7 @@ import 'dart:io';
 // import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:leafjem_app/components/hyper_link.dart';
 import 'package:leafjem_app/components/output_table.dart';
 import 'package:tflite/tflite.dart';
 
@@ -180,6 +181,29 @@ class _HomeScreenState extends State<HomeScreen> {
                 padding: const EdgeInsets.all(10),
                 child: OutlinedButton(
                     onPressed: clearImage, child: const Text('Reset')),
+              ),
+              Container(
+                margin: const EdgeInsets.only(top: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(8),
+                      child: const HyperLink(
+                          displayText: 'What is Pixsoil?', path: '/about'),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(8),
+                      child: const HyperLink(
+                          displayText: 'The Researchers', path: '/researchers'),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(8),
+                      child: const HyperLink(
+                          displayText: 'Pixsoil for web', path: '/web'),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
