@@ -87,14 +87,50 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
             children: [
               _selectedImage != null
-                  ? SizedBox(
-                      height: deviceWidth,
-                      child:
-                          Image(image: FileImage(File(_selectedImage!.path))),
+                  ? Container(
+                      margin: const EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(10)),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.4),
+                            spreadRadius: 4,
+                            blurRadius: 7,
+                          ),
+                        ],
+                      ),
+                      child: SizedBox(
+                        height: deviceWidth,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Image(
+                              image: FileImage(File(_selectedImage!.path)),
+                              width: deviceWidth,
+                              fit: BoxFit.fill),
+                        ),
+                      ),
                     )
-                  : SizedBox(
-                      height: deviceWidth,
-                      child: const Center(child: Text('No image is selected')),
+                  : Container(
+                      margin: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(10)),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.4),
+                            spreadRadius: 4,
+                            blurRadius: 7,
+                          ),
+                        ],
+                      ),
+                      child: SizedBox(
+                        height: deviceWidth,
+                        child:
+                            const Center(child: Text('No image is selected')),
+                      ),
                     ),
               _output != null ? OutputTable(output: _output) : Container(),
               const SizedBox(
