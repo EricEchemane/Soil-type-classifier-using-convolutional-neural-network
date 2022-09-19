@@ -65,20 +65,27 @@ class _SuitablePlantsScreenState extends State<SuitablePlantsScreen> {
                   textAlign: TextAlign.center,
                 )),
               ),
-              ListView.builder(
-                itemBuilder: (_, index) {
-                  String? name = widget.suitablePlants![index]["name"];
-                  String? image = widget.suitablePlants![index]["image"];
-                  String? description =
-                      widget.suitablePlants![index]["description"];
-                  return Plant(
-                      name: name!, description: description!, image: image!);
-                },
-                itemCount: widget.suitablePlants?.length,
-                scrollDirection: Axis.vertical,
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-              ),
+              networkConnected
+                  ? ListView.builder(
+                      itemBuilder: (_, index) {
+                        String? name = widget.suitablePlants![index]["name"];
+                        String? image = widget.suitablePlants![index]["image"];
+                        String? description =
+                            widget.suitablePlants![index]["description"];
+                        return Plant(
+                            name: name!,
+                            description: description!,
+                            image: image!);
+                      },
+                      itemCount: widget.suitablePlants?.length,
+                      scrollDirection: Axis.vertical,
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                    )
+                  : const Center(
+                      child: Text(
+                          'This Requires internet connection to load suitable plants'),
+                    ),
             ])));
   }
 }
