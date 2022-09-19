@@ -1,5 +1,5 @@
 const plants = {
-  "clay": [
+  "majority of vegetables": [
     {
       "name": "Broccoli",
       "image":
@@ -70,19 +70,76 @@ const plants = {
           "Snap and snow peas do best with trellis even if they say they are no-trellis varieties. Pea pods can be harvested at any time: the whole thing is delicious.",
     },
   ],
-  "gravel": [
+  "bulbs and tubers": [
     {
-      "name": "",
-      "image": "",
-      "description": "",
+      "name": "Onion",
+      "image":
+          "https://static.india.com/wp-content/uploads/2020/08/red-onion.jpg",
+      "description":
+          "What is the benefit of onions? Onions contain organic sulfur compounds. These compounds are the reason why onions have such a sharp, strong taste and smell. Organic sulfur compounds help reduce the level of cholesterol in your body and may also help break down blood clots, lowering your risk for heart disease and stroke.",
     },
-    // {
-    //   "name": "",
-    //   "image": "",
-    //   "description": "",
-    // },
+    {
+      "name": "Garlic",
+      "image":
+          "https://organic-village.co.th/wp-content/uploads/2021/11/1-Garlic.jpeg",
+      "description":
+          "Garlic helps Boost Your Body's Immune System. reduce High Blood Pressure, reduce Cholesterol Levels, helps with prevention of cancer, has antibiotic properties and can improve athletic performance.",
+    },
+    {
+      "name": "Allium",
+      "image":
+          "https://www.gardendesign.com/pictures/images/675x529Max/site_3/serendipity-allium-allium-proven-winners_16388.jpg",
+      "description":
+          "The economically most important Allium crop species (common onion and garlic) are worldwide used as spices, vegetables, and medicinal plants. Traditionally, they play a very important role in the daily diet also in Asia. Here they can be seen under cultivation in every home garden.",
+    },
+    {
+      "name": "Daffodil",
+      "image":
+          "https://www.proflowers.com/blog/wp-content/uploads/2021/04/daffodil-care-guide-thumb.jpg",
+      "description":
+          "Daffodils are said to symbolize friendship but also new beginnings. They are one of the first signs of Spring and are also strongly associated with Easter because of this reason. In China, the daffodil symbolizes good fortune and they are the official Chinese New Year symbol.",
+    },
+    {
+      "name": "Tulip",
+      "image":
+          "https://cdnprod.mafretailproxy.com/sys-master-root/ha5/h82/9957063589918/1660055_main.jpg_480Wx480H",
+      "description":
+          "Tulip bulbs are a famine food, and they must be prepared correctly, that is the centers must be removed. Fortunately tulip petals are more edible. The petals can be eaten raw or cooked but loose much of their color when cooked. They can have many flavors: Bland, beans, peas, and cucumbers.",
+    },
+    {
+      "name": "Beets",
+      "image":
+          "https://post.healthline.com/wp-content/uploads/2020/09/AN172-Beets-732x549-Thumb_0.jpg",
+      "description":
+          "Beets are rich in folate (vitamin B9) which helps cells grow and function. Folate plays a key role in controlling damage to blood vessels, which can reduce the risk of heart disease and stroke. Beets are naturally high in nitrates, which are turned into nitric oxide in the body.",
+    },
+    {
+      "name": "Carrots",
+      "image":
+          "https://hgtvhome.sndimg.com/content/dam/images/hgtv/fullset/2018/4/25/3/shutterstock_440493100_5-second-Studio_carrots.jpg.rend.hgtvcom.1280.853.suffix/1524688181811.jpeg",
+      "description":
+          "Carrot seeds can be sown about 2 to 3 weeks before the last spring frost date. Find your local frost dates here. Ideally, you want the soil to have both dried out and warmed up a little after the winter. Seeds germinate after the soil temperature is at least 40° and germinate best at 55-65°, not exceeding 75°F.",
+    },
+    {
+      "name": "Parsnips",
+      "image":
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_963ccy7iYAERRXtDZF3ZvfLfwwf60Z9zNeYB03GECsdk-sDNgyniR_OT1Hpu5Dfdx0g&usqp=CAU",
+      "description":
+          "It resembles a carrot in this way, and indeed they are part of the same family. But parsnips don't taste like carrots. They're sweeter—think sweet potatoes—and they have a delicious naturally nutty or earthy flavor. Parsnips are typically available in the fall and winter.",
+    },
+    {
+      "name": "Turnips",
+      "image":
+          "https://cdn-prod.medicalnewstoday.com/content/images/articles/284/284815/a-bunch-of-turnips-on-a-table.jpg",
+      "description":
+          "Turnips are a cruciferous vegetable with multiple health benefits. They boast an impressive nutritional profile, and their bioactive compounds, such as glucosinolates, may support blood sugar control, protect against harmful bacteria, and provide anticancer and anti-inflammatory effects.",
+    },
+    {
+      "name": "Radishes",
+      "image":
+          "https://www.tasteofhome.com/wp-content/uploads/2019/05/radish-shutterstock_1010435131.jpg?fit=700,700",
+      "description":
+          "Radishes are rich in antioxidants and minerals like calcium and potassium. Together, these nutrients help lower high blood pressure and reduce your risks for heart disease. The radish is also a good source of natural nitrates that improve blood flow.",
+    },
   ],
-// humus
-// sand
-// silt
 };

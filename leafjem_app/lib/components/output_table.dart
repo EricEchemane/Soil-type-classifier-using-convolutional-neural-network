@@ -127,7 +127,7 @@ class _OutputTableState extends State<OutputTable> {
                       builder: (context) => SuitablePlantsScreen(
                         soilType: widget.output["label"],
                         overview: props["suitable_plants"],
-                        suitablePlants: plants["clay"],
+                        suitablePlants: plants[props["suitable_plants"]],
                       ),
                     ),
                   );
