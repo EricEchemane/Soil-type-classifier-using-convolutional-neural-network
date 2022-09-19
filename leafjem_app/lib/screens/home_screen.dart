@@ -180,7 +180,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 70,
                 padding: const EdgeInsets.all(10),
                 child: OutlinedButton(
-                    onPressed: clearImage, child: const Text('Reset')),
+                    onPressed: _selectedImage != null ? clearImage : null,
+                    child: const Text('Reset')),
               ),
               Container(
                 margin: const EdgeInsets.only(top: 20),
