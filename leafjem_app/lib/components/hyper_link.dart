@@ -21,7 +21,8 @@ class HyperLink extends StatelessWidget {
               color: Colors.blue, fontSize: 13, fontWeight: FontWeight.w500),
           recognizer: TapGestureRecognizer()
             ..onTap = () {
-              launchUrl(Uri.https('pixsoil.vercel.app', path));
+              launchUrl(Uri.https('pixsoil.vercel.app', path),
+                  mode: LaunchMode.externalApplication);
             }),
     );
   }
