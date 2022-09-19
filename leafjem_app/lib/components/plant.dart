@@ -41,10 +41,13 @@ class Plant extends StatelessWidget {
             const SizedBox(height: 20),
             Text(
               name,
-              style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 20),
-            Text(description)
+            const SizedBox(height: 10),
+            Text(
+              description,
+              style: const TextStyle(height: 1.5, fontSize: 15),
+            )
           ],
         ));
   }
