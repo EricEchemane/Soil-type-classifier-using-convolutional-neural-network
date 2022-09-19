@@ -80,7 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
         appBar: AppBar(
             centerTitle: true,
             title: const Text(
-              'Pixsoil',
+              'Pixsoil 🌱',
               style: TextStyle(fontFamily: 'Oleo', fontSize: 25),
             )),
         body: SingleChildScrollView(
