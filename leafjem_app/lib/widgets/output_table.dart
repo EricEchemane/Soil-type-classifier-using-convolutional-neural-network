@@ -73,7 +73,7 @@ class _OutputTableState extends State<OutputTable> {
                 ),
               ]),
               TableRow(children: [
-                const TableData(text: 'Confidence'),
+                const TableData(text: 'Accuracy'),
                 TableData(text: '${widget.output["confidence"]}')
               ]),
               TableRow(children: [
