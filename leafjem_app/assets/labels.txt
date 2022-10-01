@@ -1,5 +1,6 @@
 clay
 gravel
 humus
+not
 sand
 silt

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:leafjem_app/components/table_data.dart';
+import 'package:leafjem_app/widgets/table_data.dart';
 import 'package:leafjem_app/screens/suitable_plants.dart';
 import 'package:leafjem_app/constants/soil_props.dart';
 import 'package:leafjem_app/constants/plants.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
-import 'package:leafjem_app/components/plant.dart';
+import 'package:leafjem_app/widgets/plant.dart';
 
 class SuitablePlantsScreen extends StatefulWidget {
   final String soilType;

@@ -1,11 +1,10 @@
-// import 'dart:async';
 import 'dart:io';
 
-// import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:leafjem_app/components/hyper_link.dart';
-import 'package:leafjem_app/components/output_table.dart';
+import 'package:leafjem_app/widgets/not_recognized.dart';
+import 'package:leafjem_app/widgets/hyper_link.dart';
+import 'package:leafjem_app/widgets/output_table.dart';
 import 'package:tflite/tflite.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -20,6 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final ImagePicker _picker = ImagePicker();
   XFile? _selectedImage;
   dynamic _output;
+  bool notRecognized = false;
 
   @override
   void initState() {
@@ -34,12 +34,22 @@ class _HomeScreenState extends State<HomeScreen> {
         imageMean: 0.0, // defaults to 117.0
         imageStd: 255.0, // defaults to 1.0
         numResults: 2, // defaults to 5
-        threshold: 0.2, // defaults to 0.1
+        threshold: 0.1, // defaults to 0.1
         asynch: true // defaults to true
         );
+    String label = output?[0]["label"];
+    double confidence = output?[0]["confidence"];
+    print('label: ');
+    print(label);
+    if (label == "not" || confidence < 0.8500000000000000) {
+      setState(() {
+        notRecognized = true;
+      });
+      return;
+    }
     setState(() {
-      // _loading = false;
       _output = output?[0];
+      notRecognized = false;
     });
   }
 
@@ -141,7 +151,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         )),
                       ),
                     ),
-              _output != null ? OutputTable(output: _output) : Container(),
+              _output != null && notRecognized == false
+                  ? OutputTable(output: _output)
+                  : Container(),
+              notRecognized == true ? const NotRecognized() : Container(),
               const SizedBox(
                 height: 20,
               ),
