@@ -77,11 +77,6 @@ class _OutputTableState extends State<OutputTable> {
                 TableData(text: '${widget.output["confidence"]}')
               ]),
               TableRow(children: [
-                const TableData(text: 'Rounded Confidence'),
-                TableData(
-                    text: '${widget.output["confidence"].roundToDouble()}')
-              ]),
-              TableRow(children: [
                 const TableData(text: 'Grain Size'),
                 TableData(text: '${props["grain_size"]}')
               ]),
