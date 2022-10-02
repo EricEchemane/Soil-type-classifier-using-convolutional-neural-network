@@ -30,18 +30,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
   classifyImage() async {
     var output = await Tflite.runModelOnImage(
-        path: _selectedImage!.path,
-        imageMean: 0.0, // defaults to 117.0
-        imageStd: 255.0, // defaults to 1.0
-        numResults: 2, // defaults to 5
-        threshold: 0.1, // defaults to 0.1
-        asynch: true // defaults to true
-        );
+      path: _selectedImage!.path,
+      imageMean: 0.0, // defaults to 117.0
+      imageStd: 255.0, // defaults to 1.0
+      numResults: 2, // defaults to 5
+      threshold: 0.2, // defaults to 0.1
+    );
     String label = output?[0]["label"];
-    double confidence = output?[0]["confidence"];
-    print('label: ');
-    print(label);
-    if (label == "not" || confidence < 0.8500000000000000) {
+    if (label == "not" || label == "alike") {
       setState(() {
         notRecognized = true;
       });
@@ -55,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   loadModel() async {
     await Tflite.loadModel(
-      model: "assets/soil_classifier.tflite",
+      model: "assets/final_model.tflite",
       labels: "assets/labels.txt",
     );
   }
