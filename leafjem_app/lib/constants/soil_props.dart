@@ -42,6 +42,19 @@ const soilProps = [
     "suitable_plants": "Majority of vegetables"
   },
   {
+    "name": "yellow",
+    "colors": "yellow, golden brown",
+    "grain_size": "bigger than clay, smaller than sand",
+    "acidity": "slightly acidic to slightly alkaline",
+    "texture": "very fine and soft",
+    "how_to_test": "smooth and soapy to the touch",
+    "water_and_nutrient_holding_capacity": "lower than clay, higher than sand",
+    "porosity": "good",
+    "other_properties": "easy to compact",
+    "how_to_improve": "add organic matter, cultivation",
+    "suitable_plants": "Majority of vegetables"
+  },
+  {
     "name": "humus",
     "colors": "dark brown, black",
     "grain_size": "small to soft large size",

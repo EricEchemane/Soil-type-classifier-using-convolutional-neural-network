@@ -37,9 +37,14 @@ class _HomeScreenState extends State<HomeScreen> {
       threshold: 0.2, // defaults to 0.1
     );
     String label = output?[0]["label"];
-    if (label == "not" || label == "alike") {
+    double confidence = output?[0]["confidence"];
+
+    if (label == "not" ||
+        label == "alike" ||
+        confidence < 0.50000000000000000) {
       setState(() {
         notRecognized = true;
+        _output = null;
       });
       return;
     }
