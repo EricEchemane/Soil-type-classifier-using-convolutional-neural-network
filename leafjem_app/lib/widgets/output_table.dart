@@ -77,37 +77,41 @@ class _OutputTableState extends State<OutputTable> {
                 TableData(text: '${widget.output["confidence"]}')
               ]),
               TableRow(children: [
+                const TableData(text: 'Overview'),
+                TableData(text: '${props["Overview"]}')
+              ]),
+              TableRow(children: [
                 const TableData(text: 'Grain Size'),
-                TableData(text: '${props["grain_size"]}')
+                TableData(text: '${props["Grain Size"]}')
               ]),
               TableRow(children: [
                 const TableData(text: 'Acidity'),
-                TableData(text: '${props["acidity"]}')
+                TableData(text: '${props["Acidity"]}')
               ]),
               TableRow(children: [
                 const TableData(text: 'Texture'),
-                TableData(text: '${props["texture"]}')
+                TableData(text: '${props["Texture"]}')
               ]),
               TableRow(children: [
-                const TableData(text: 'How To Test'),
-                TableData(text: '${props["how_to_test"]}')
+                const TableData(text: 'How to verify the type'),
+                TableData(text: '${props["How to verify the type"]}')
               ]),
               TableRow(children: [
                 const TableData(text: 'Water and Nutrient Holding Capacity'),
                 TableData(
-                    text: '${props["water_and_nutrient_holding_capacity"]}')
+                    text: '${props["Water and Nutrient Holding Capacity"]}')
               ]),
               TableRow(children: [
                 const TableData(text: 'Porosity'),
-                TableData(text: '${props["porosity"]}')
+                TableData(text: '${props["Porosity"]}')
               ]),
               TableRow(children: [
                 const TableData(text: 'Other Properties'),
-                TableData(text: '${props["other_properties"]}')
+                TableData(text: '${props["Other properties"]}')
               ]),
               TableRow(children: [
                 const TableData(text: 'how To Improve'),
-                TableData(text: '${props["how_to_improve"]}')
+                TableData(text: '${props["How to improve the soil"]}')
               ]),
             ],
           ),
@@ -121,8 +125,8 @@ class _OutputTableState extends State<OutputTable> {
                     MaterialPageRoute(
                       builder: (context) => SuitablePlantsScreen(
                         soilType: widget.output["label"],
-                        overview: props["suitable_plants"],
-                        suitablePlants: plants[props["suitable_plants"]],
+                        overview: props["Suitable Plants"],
+                        suitablePlants: plants[props["Suitable Plants"]],
                       ),
                     ),
                   );

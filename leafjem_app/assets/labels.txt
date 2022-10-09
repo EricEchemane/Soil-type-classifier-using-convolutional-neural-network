@@ -1,8 +1,11 @@
 alike
 clay
+dry rocky
+grassy
 gravel
 humus
+loam
 not
-sand
-silt
+sandy
+silty
 yellow
